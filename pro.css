@@ -1,0 +1,859 @@
+
+/* =========================
+   RESET GENERAL
+========================= */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================
+   VARIABLES
+========================= */
+
+:root{
+    --rojo: #e50914;
+    --rojo-hover: #b20710;
+    --fondo: #0b0b0b;
+    --gris: #bdbdbd;
+    --blanco: white;
+}
+
+/* =========================
+   BODY
+========================= */
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+
+    background-image:
+    linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
+    url('https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?q=80&w=1974&auto=format&fit=crop');
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    min-height: 100vh;
+}
+
+/* =========================
+   HEADER
+========================= */
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 40px;
+
+    background: rgba(0,0,0,0.92);
+
+    border-bottom: 4px solid var(--rojo);
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1{
+    color: var(--rojo);
+
+    font-size: clamp(32px, 5vw, 48px);
+
+    letter-spacing: 4px;
+}
+
+/* =========================
+   NAV
+========================= */
+
+nav{
+    display: flex;
+    gap: 25px;
+}
+
+nav a{
+    text-decoration: none;
+    color: var(--blanco);
+
+    font-size: 18px;
+
+    transition: 0.3s ease;
+}
+
+nav a:hover{
+    color: var(--rojo);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    width: 100%;
+    height: 400px;
+
+    background-image:
+    linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,1)),
+    url('https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?q=80&w=1974&auto=format&fit=crop');
+
+    background-size: cover;
+    background-position: center;
+}
+
+/* =========================
+   INFO PRINCIPAL
+========================= */
+
+.info{
+    color: var(--blanco);
+
+    padding: 30px 40px 20px;
+}
+
+.info h2{
+    font-size: clamp(36px, 6vw, 52px);
+
+    margin-bottom: 10px;
+}
+
+.info p{
+    font-size: 18px;
+
+    color: var(--gris);
+
+    line-height: 1.8;
+
+    max-width: 750px;
+}
+
+/* =========================
+   TITULOS
+========================= */
+
+.seccion-titulo{
+    color: var(--rojo);
+
+    font-family: 'Times New Roman', Times, serif;
+
+    font-size: 24px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    padding: 0 40px 20px;
+
+    margin-top: 40px;
+}
+
+/* =========================
+   CONTENEDOR DESTACADOS
+========================= */
+
+.contenedor{
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: flex;
+    justify-content: center;
+
+    gap: 20px;
+
+    padding: 0 40px 60px;
+
+    flex-wrap: wrap;
+}
+
+/* =========================
+   ITEMS
+========================= */
+
+.item{
+    flex: 1;
+    min-width: 250px;
+    max-width: 340px;
+
+    height: 460px;
+
+    position: relative;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    background-size: cover;
+    background-position: center;
+
+    transition: transform 0.4s ease;
+
+    cursor: pointer;
+
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.item:hover{
+    transform: scale(1.04);
+}
+
+/* =========================
+   IMAGENES
+========================= */
+
+.img1{
+    background-image: url("inception.jfif");
+}
+
+.img2{
+    background-image: url("interestelar.jfif");
+}
+
+.img3{
+    background-image: url("avatares.jfif");
+}
+
+/* =========================
+   OVERLAY
+========================= */
+
+.overlay{
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        to bottom,
+        transparent 65%,
+        rgba(0,0,0,0.85)
+    );
+}
+
+/* =========================
+   CARD INFO
+========================= */
+
+.card-info{
+    position: absolute;
+
+    bottom: 0;
+
+    padding: 20px;
+
+    width: 100%;
+}
+
+.card-titulo{
+    color: var(--blanco);
+
+    font-size: 22px;
+
+    margin-bottom: 6px;
+}
+
+.card-meta{
+    color: var(--gris);
+
+    font-size: 14px;
+
+    margin-bottom: 10px;
+}
+
+.card-rating{
+    color: var(--rojo);
+
+    letter-spacing: 2px;
+}
+
+/* =========================
+   PELICULA DETALLE
+========================= */
+
+.pelicula{
+    display: flex;
+
+    gap: 40px;
+
+    max-width: 1100px;
+
+    margin: -140px auto 60px;
+
+    padding: 0 40px;
+
+    align-items: flex-start;
+
+    flex-wrap: wrap;
+}
+
+.pelicula img{
+    width: 230px;
+    height: 340px;
+
+    object-fit: cover;
+
+    border-radius: 14px;
+
+    border: 2px solid rgba(255,255,255,0.1);
+}
+
+/* =========================
+   INFO PELICULA
+========================= */
+
+.info-pelicula h2{
+    color: var(--blanco);
+
+    font-size: clamp(34px, 5vw, 52px);
+
+    margin-bottom: 10px;
+}
+
+.genero{
+    color: var(--rojo);
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 24px;
+}
+
+/* =========================
+   DATOS
+========================= */
+
+.datos{
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+
+    gap: 14px;
+
+    margin-bottom: 24px;
+}
+
+.dato{
+    background: rgba(255,255,255,0.06);
+
+    padding: 14px;
+
+    border-radius: 12px;
+}
+
+.dato span{
+    display: block;
+
+    color: var(--rojo);
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 5px;
+}
+
+.dato p{
+    color: var(--blanco);
+
+    font-size: 14px;
+}
+
+/* =========================
+   RESEÑA
+========================= */
+
+.ref-titulo{
+    color: var(--blanco);
+
+    font-size: 18px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+}
+
+.ref{
+    color: var(--gris);
+
+    line-height: 1.8;
+
+    max-width: 650px;
+}
+
+/* =========================
+   HR
+========================= */
+
+hr{
+    border: none;
+
+    border-top: 1px solid rgba(255,255,255,0.08);
+
+    max-width: 1100px;
+
+    margin: 0 auto 50px;
+}
+
+/* =========================
+   OPINIONES
+========================= */
+
+.opinion-seccion{
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 0 40px 70px;
+}
+
+.opinion-seccion h3{
+    color: var(--blanco);
+
+    font-size: 22px;
+
+    border-left: 4px solid var(--rojo);
+
+    padding-left: 14px;
+
+    margin-bottom: 20px;
+}
+
+.opinion-seccion textarea{
+    width: 100%;
+
+    min-height: 140px;
+
+    background: rgba(255,255,255,0.05);
+
+    border: 1px solid rgba(255,255,255,0.1);
+
+    border-radius: 10px;
+
+    padding: 16px;
+
+    color: var(--blanco);
+
+    resize: vertical;
+
+    font-size: 15px;
+}
+
+.opinion-seccion textarea:focus{
+    outline: none;
+
+    border-color: var(--rojo);
+}
+
+/* =========================
+   BOTON
+========================= */
+
+.btn-enviar{
+    margin-top: 14px;
+
+    background: var(--rojo);
+
+    color: var(--blanco);
+
+    border: none;
+
+    padding: 12px 30px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.btn-enviar:hover{
+    background: var(--rojo-hover);
+}
+
+/* =========================
+   CARRUSEL
+========================= */
+
+.carrusel-wrap{
+    width: 100%;
+
+    overflow: hidden;
+
+    padding: 20px 0 50px;
+}
+
+.carrusel-track{
+    display: flex;
+
+    gap: 16px;
+
+    width: max-content;
+
+    animation: scroll-loop 25s linear infinite;
+}
+
+@keyframes scroll-loop{
+
+    0%{
+        transform: translateX(0);
+    }
+
+    100%{
+        transform: translateX(-50%);
+    }
+}
+
+.car-item{
+    width: 200px;
+    height: 300px;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    background-size: cover;
+    background-position: center;
+
+    position: relative;
+
+    flex-shrink: 0;
+
+    transition: transform 0.3s ease;
+}
+
+.car-item:hover{
+    transform: scale(1.06);
+}
+
+.car-overlay{
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        to bottom,
+        transparent 60%,
+        rgba(0,0,0,0.7)
+    );
+}
+
+/* =========================
+   IMAGENES CARRUSEL
+========================= */
+
+.car1  { background-image: url('titanic.jfif'); }
+.car2  { background-image: url('notebook.jfif'); }
+.car3  { background-image: url('jonaswick.jfif'); }
+.car4  { background-image: url('dune.jfif'); }
+.car5  { background-image: url('dunqueerque.jfif'); }
+.car6  { background-image: url('glad2.jfif'); }
+.car7  { background-image: url('BATMAN.jfif'); }
+.car8  { background-image: url('fauno.jpg'); }
+.car9  { background-image: url('freddis.jpg'); }
+.car10 { background-image: url('bromas.jpg'); }
+
+.car11  { background-image: url('hellboy.jpg'); }
+.car12  { background-image: url('tenet.jpg'); }
+.car13  { background-image: url('kong.jpg'); }
+.car14  { background-image: url('out.jpg'); }
+.car15  { background-image: url('dunqueerque.jfif'); }
+.car16  { background-image: url('dune.jfif'); }
+.car17  { background-image: url('f1.jpg'); }
+.car18  { background-image: url('lastmen.jpg'); }
+.car19  { background-image: url('heat.jpg'); }
+.car20 { background-image: url('name.jpg'); }
+
+
+
+.car21  { background-image: url('hellboy.jpg'); }
+.car22  { background-image: url('tenet.jpg'); }
+.car23  { background-image: url('macario.jpg'); }
+.car24  { background-image: url('aladin.jpg'); }
+.car25  { background-image: url('reeddd.jpg'); }
+.car26  { background-image: url('rocky.jpg'); }
+.car27  { background-image: url('chuck.jpg'); }
+.car28  { background-image: url('terminatore.jpg'); }
+.car29  { background-image: url('heat.jpg'); }
+.car30 { background-image: url('name.jpg'); }
+
+/* =========================
+   GRID
+========================= */
+
+.grid{
+    max-width: 1300px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 25px;
+
+    padding: 40px;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.card{
+    background: #111;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    transition: transform 0.3s ease;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+
+    cursor: pointer;
+}
+
+.card:hover{
+    transform: scale(1.05);
+}
+
+.card img{
+    width: 100%;
+
+    height: 320px;
+
+    object-fit: cover;
+}
+
+.card h3{
+    color: var(--blanco);
+
+    text-align: center;
+
+    padding: 14px;
+
+    background: #000;
+}
+
+/* =========================
+   LISTA VERTICAL
+========================= */
+
+.lista-vertical{
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 30px;
+}
+
+.fila-pelicula{
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+
+    background: rgba(0,0,0,0.65);
+
+    margin-bottom: 25px;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    transition: 0.3s ease;
+
+    padding: 12px;
+
+    flex-wrap: wrap;
+}
+
+.fila-pelicula:hover{
+    transform: scale(1.02);
+
+    background: rgba(255,0,0,0.08);
+}
+
+.fila-pelicula img{
+    width: 220px;
+    height: 320px;
+
+    object-fit: cover;
+
+    border-radius: 12px;
+}
+
+.texto h3{
+    color: var(--blanco);
+
+    font-size: 28px;
+
+    margin-bottom: 10px;
+}
+
+.texto p{
+    color: #ccc;
+
+    line-height: 1.7;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+    background: var(--fondo);
+
+    color: var(--blanco);
+
+    margin-top: 60px;
+
+    padding: 50px 20px 0;
+
+    border-top: 4px solid var(--rojo);
+}
+
+.footer-contenido{
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 40px;
+
+    flex-wrap: wrap;
+
+    padding-bottom: 25px;
+}
+
+.footer-col{
+    flex: 1;
+
+    min-width: 220px;
+}
+
+.footer-col h3{
+    color: var(--rojo);
+
+    font-size: 20px;
+
+    margin-bottom: 10px;
+
+    letter-spacing: 2px;
+}
+
+.footer-col p{
+    color: var(--gris);
+
+    line-height: 1.7;
+}
+
+.footer-linea{
+    width: 100%;
+
+    height: 1px;
+
+    background: rgba(255,255,255,0.15);
+}
+
+.footer-bottom{
+    text-align: center;
+
+    padding: 18px;
+
+    font-size: 13px;
+
+    color: #777;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width: 768px){
+
+    header{
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .pelicula{
+        margin-top: -80px;
+    }
+
+    .pelicula img{
+        width: 100%;
+        height: auto;
+    }
+
+    .fila-pelicula{
+        flex-direction: column;
+    }
+
+    .fila-pelicula img{
+        width: 100%;
+        height: auto;
+    }
+
+    .datos{
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================
+   MEJORAS ESTRENOS
+========================= */
+
+.fila-pelicula{
+    border-left: 5px solid transparent;
+}
+
+.fila-pelicula:hover{
+    border-left: 5px solid var(--rojo);
+}
+
+.texto{
+    flex: 1;
+}
+
+.texto p{
+    max-width: 700px;
+}
+
+.genero{
+    display: inline-block;
+
+    background: var(--rojo);
+
+    color: white;
+
+    padding: 6px 12px;
+
+    border-radius: 30px;
+
+    font-size: 12px;
+
+    margin-bottom: 12px;
+
+    letter-spacing: 1px;
+}
+
+.fila-pelicula .datos{
+    margin-top: 15px;
+    max-width: 700px;
+}
+
+.fila-pelicula .dato{
+    background: rgba(255,255,255,0.08);
+}
